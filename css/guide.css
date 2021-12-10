@@ -1,0 +1,178 @@
+/*!common:widget/css/base.css*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: arial, courier new, courier, "\5b8b\4f53", monospace
+}
+
+small {
+    font-size: 12px
+}
+
+ul,
+ol,
+li {
+    list-style: none
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -.5em
+}
+
+sub {
+    bottom: -.25em
+}
+
+legend {
+    color: #000
+}
+
+fieldset,
+img {
+    border: 0
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: url('../images/guide_help.png') no-repeat center center;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    display: block;
+    width: 100%;
+    background-color: #223045;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 1;
+    line-height: 60px;
+    box-sizing: border-box;
+    padding: 11px 0 0 18px;
+}
+
+nav img {
+    vertical-align: middle;
+    margin: 0 5px 0 10px;
+}
+
+.content {
+    width: 1200px;
+    margin: 0 auto;
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    right: 0px;
+    bottom: 30%;
+    display: flex;
+    /* justify-content: space-between; */
+    align-content: space-around;
+    flex-flow: row wrap;
+}
+
+.item_box {
+    width: 400px;
+}
+
+.item_box ul {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.item_box ul li {
+    font-family: '微软雅黑';
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #cdcdcd;
+    color: #337ab7;
+    font-size: 16px;
+}
+
+.item_box ul li a {
+    text-decoration: none;
+    color: #337ab7;
+}
+
+.item_box ul li:first-child {
+    font-size: 22px;
+    border: none;
+    color: #223045
+}
+
+.footer {
+    height: 20%;
+}
