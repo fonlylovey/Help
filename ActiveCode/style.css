@@ -1,0 +1,53 @@
+
+body,html{
+margin: 0;
+font-size:20px;
+font-family:'Microsoft YaHei,微软雅黑';
+
+height:100%;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+.button{
+    padding: none;
+    width: 96px;
+    height: 32px;
+    margin-left: 64px;
+}
+
+.lineEdit
+{
+    padding: none;
+    width: 110px;
+    height: 20px;
+}
+
+.item_box ul {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.item_box ul li {
+    font-family: '微软雅黑';
+    height: 40px;
+    line-height: 40px;
+    color: #337ab7;
+    font-size: 16px;
+}
+
+.item_box ul li a {
+    text-decoration: none;
+    color: #337ab7;
+    border-bottom: 1px solid #cdcdcd;
+}
+.content
+{
+    font-size: 20px;
+    color: crimson;
+    margin-left: 10px;
+}
