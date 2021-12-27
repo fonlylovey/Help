@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>激活码生成</title>
+    
+</head>
+
+<body>
+    <h3>请输入设备编号</h3>
+    <p>
+        编号 <input type="text" id="codekey" value = "1207">
+        <br /><br />
+        <button id="butGen" onclick="onGenerate()">生成</button>
+        <br /><br />
+        <h2 id="code"></h2>
+    </p>
+    <script type="text/javascript" charset="utf-8" src="MD5.js"></script>
+    <script>
+        function onGenerate()
+        {
+            var codeKey = document.getElementById("codekey");
+            var actCode = document.getElementById("code");
+
+            var keySring = "{358c8b2e-89cb-4c19-995c-7394b42999ad}_Salt_" + getNowDate() + "_Key_" + codeKey.value;
+            //{358c8b2e-89cb-4c19-995c-7394b42999ad}_Salt_2021.12.27_Key_1207
+            //{358c8b2e-89cb-4c19-995c-7394b42999ad}_Salt_2021_12_27_Key_1207
+            
+            if(codeKey.value == "")
+            {
+                alert("请输入正确的编号！");
+            }
+            var asciiCode = stringToASCII(keySring);
+            var md5Code = hex_md5(keySring);
+            var code = "";
+            if(md5Code.length > 2)
+            {
+                var aa = md5Code[2];
+                var bb = md5Code[1];
+                code = code.concat(stringToASCII(aa), stringToASCII(bb));
+            }
+            //18795be011a6f55b3a3c197dede1d728
+            actCode.innerText = code;
+        }
+
+        function stringToASCII(theString)
+        {
+            var asciiString = "";
+            for(var i = theString.length - 1; i >= 0; i--)
+            {
+                var strChar = theString.charAt(i);
+                var charCode = strChar.charCodeAt();
+                asciiString += charCode;
+            }
+            return asciiString;
+        }
+
+        function getNowDate()
+        {
+            var date = new Date();
+            var strDate = "";
+            strDate += date.getFullYear() + ".";
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            if(month >= 1 && month <= 9)
+            {
+                month = "0" + month;
+            }
+            if(day >= 0 && day <= 9)
+            {
+                day = "0" + day;
+            }
+            strDate += month + "." + day;
+            return strDate;
+        }
+    </script>
+   
+</body>
+</html>
