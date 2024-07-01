@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    
+    <title>激活码生成</title>
+</head>
+
+<body>
+    <div class="item_box" >
+        <ul>
+            <li > 请输入屏幕显示的设备编号 </li>
+            
+            <li>
+                <label for="name">设备编号:</label>
+                <input class ="lineEdit" type="text" id="deviceID" value = "358c8b2e-89cb-4c19-995c-7394b42999ad">
+            </li>
+            <li>
+                <label for="name">请选择授权截止日期:</label>
+                <input type="date" id="deadline" name="截止日期">
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <button class ="button"  id="butGen" onclick="onGenerate()">生成</button>
+            </li>
+            <li >
+                <label class="content">激活码：</label>
+                <label id="codekey" class="content">undefined</label>
+            </li>
+        </ul>
+    </div>
+           
+    <script type="text/javascript" charset="utf-8" src="MD5.js"></script>
+    <script>
+        function onGenerate()
+        {
+            var key = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+                17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32];
+            var key1 = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ];
+            var deviceID = document.getElementById("deviceID");
+            var deadline = document.getElementById("deadline");
+            var date = new Date(deadline.value);
+            var strDate =  date.getFullYear() + "-" + date.getMonth()+ "-" +  date.getDay();
+           
+            var keySring = "358c8b2e-89cb-4c19-995c-7394b42999ad" + "_" + strDate;
+            
+            if(deviceID.value == "" || !date.getFullYear() > 0)
+            {
+                alert("请输入正确的编号！");
+            }
+            var strCodeKey = btoa(keySring);
+
+            //var aesEcb = new aesjs.ModeOfOperation.ecb(key1);
+            //var encryptedBytes = aesEcb.encrypt(strUTF8);
+
+            //var encryptedHex = aesjs.utils.hex.fromBytes(encryptedBytes);
+            codekey.innerText = strCodeKey;
+        }
+
+        function stringToASCII(theString)
+        {
+            var asciiString = "";
+            for(var i = theString.length - 1; i >= 0; i--)
+            {
+                var strChar = theString.charAt(i);
+                var charCode = strChar.charCodeAt();
+                asciiString += charCode;
+            }
+            return asciiString;
+        }
+       
+    </script>
+   
+</body>
+</html>
