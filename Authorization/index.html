@@ -16,7 +16,7 @@
             
             <li>
                 <label for="name">设备编号:</label>
-                <input class ="lineEdit" type="text" id="deviceID" value = "358c8b2e-89cb-4c19-995c-7394b42999ad">
+                <input class ="lineEdit" type="text" id="deviceID" value = "E8AFBA8B4A2F8877B5A49C886E5B8DCD">
             </li>
             <li>
                 <label for="name">请选择授权截止日期:</label>
@@ -29,11 +29,12 @@
             </li>
             <li >
                 <label class="content">激活码：</label>
-                <label id="codekey" class="content">undefined</label>
             </li>
         </ul>
     </div>
-           
+    <div>
+        <label id="codekey" class="content">undefined</label>
+    </div>
     <script type="text/javascript" charset="utf-8" src="MD5.js"></script>
     <script>
         function onGenerate()
@@ -46,7 +47,7 @@
             var date = new Date(deadline.value);
             var strDate =  date.getFullYear() + "-" + date.getMonth()+ "-" +  date.getDay();
            
-            var keySring = "358c8b2e-89cb-4c19-995c-7394b42999ad" + "_" + strDate;
+            var keySring = deviceID.value + "_" + date.toISOString();
             
             if(deviceID.value == "" || !date.getFullYear() > 0)
             {
